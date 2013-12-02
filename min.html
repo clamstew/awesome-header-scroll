@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<style type="text/css">
+		/*
+			These are general body tags you will probably have in your project
+			Because many people dislike that default 10px border.
+		*/
+		body { margin: 0; padding: 0;}
+		header {
+			width: 100%; /* This would be an edge to edge header */
+			height: 40px; /* IMPORTANT: this will relate to the height in the .animate below */
+			background: blue;
+			color: white;
+			position: fixed;
+			margin-top: -40px;
+		}
+	</style>
+</head>
+<body>
+
+<header>Header stuff here</header>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+	// HEADER SELECTOR
+	// Default: is expecting a vanilla <header></header> tag
+	// Note: you may need to change it to something like "#main-header"
+	// 		 if your HTML is <div id="main-header"></div>
+	var headerSelector = "header"
+
+	// MINIMUM HEIGHT to start showing the header at during page scroll
+	// default: 600px down the page
+	var minShowHeight = 600;
+
+	// HEADER HEIGHT
+	// the is the height of your header in pixels
+	// default: 40px tall header
+	var headerHeight = 40;
+
+	var prevheight = minShowHeight;
+	var docheight = $(document).height();
+	var currentScrollheight = $(window).scroll(function() {
+		var currentheight = $(window).scrollTop();
+		if (prevheight > currentheight && currentheight > minShowHeight) {
+			$(headerSelector).animate({margin: 0},{ queue: false, duration: 80 });
+			if (prevheight + 10 > currentheight || prevheight - 10 < currentheight) {
+				prevheight = currentheight;
+			}
+		} else {
+			$(headerSelector).animate({margin: "-"+headerHeight+"px 0 0 0"},{ queue: false, duration: 80 });
+			if (prevheight + 10 > currentheight || prevheight - 10 < currentheight) {
+				prevheight = currentheight;
+			}
+		}
+	});
+
+</script>
+</body>
+</html>
+
+
+
