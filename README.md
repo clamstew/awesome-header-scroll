@@ -7,6 +7,8 @@ Based on sites like the current homepage of [flowdock.com](http://www.flowdock.c
 
 It uses `.animate` in jQuery to make the whole script slide off the top of the screen.
 
+---
+
 Dependency
 =============
 
