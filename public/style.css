@@ -10,7 +10,7 @@ input, textarea { border: 1px solid #000;}
 
 input[type="text"] {
 	height: 30px;
-	width: 300px;
+	width: 100%;
 	padding-left: 10px;
 }
 
