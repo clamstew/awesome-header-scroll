@@ -16,7 +16,7 @@ input[type="text"] {
 
 textarea {
 	height: 250px;
-	width: 600px;
+	width: 800px;
 	padding: 10px;
 }
 #final-code-minified {height: 170px;}
