@@ -12,4 +12,4 @@ It uses `.animate` in jQuery to make the whole script slide off the top of the s
 Dependency
 =============
 
-* jQuery (1.7+)
+* jQuery (0.7+)
